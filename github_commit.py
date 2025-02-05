@@ -7,7 +7,6 @@ def github_commit():
 
     os.system("git init")  # Initialize Git if not already
     os.system(f"git remote add origin {GITHUB_REPO}")  # Add remote
-    os.system("git pull origin main --rebase")
     os.system("git add .")  # Add all changes
     os.system(f'git commit -m "{COMMIT_MESSAGE}"')  # Commit changes
     os.system("git branch -M main")  # Set branch to main (if needed)
