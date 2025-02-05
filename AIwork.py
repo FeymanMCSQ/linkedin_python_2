@@ -1,0 +1,32 @@
+from dotenv import load_dotenv
+import os
+from openai import OpenAI
+
+
+def AIwork(post_topic, deepseek): 
+    # load_dotenv()
+
+    # deepseek = os.getenv("DEEPSEEK_KEY")
+
+    client = OpenAI(
+        base_url="https://openrouter.ai/api/v1",
+        api_key= deepseek,
+    )
+
+    completion = client.chat.completions.create(
+        model=  "deepseek/deepseek-r1",
+        messages=[
+            {
+            "role": "user",
+            "content": f"""Write a LinkedIn post on a trending topic from the realms of futurism, science, or technology. Topic {post_topic}. Your post should:
+
+                Tone & Style: Adopt a warm, yet professional tone with a human touch—feel free to include personal insights to make the content relatable.
+                Structure: Be succinct and well-organized, using clear sections or bullet points if needed.
+                Emojis: Integrate a few sparse, well-placed emojis (e.g., 😊, 🚀) to add personality without overwhelming the text.
+                Content Quality: Ensure the post is informative, accessible (minimizing excessive technical jargon), and invites thoughtful discussion.
+                Generate a high-quality, engaging post that meets these criteria.""",
+            }
+        ]
+    )
+
+    return completion
