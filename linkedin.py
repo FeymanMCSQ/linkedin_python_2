@@ -1,10 +1,15 @@
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
+from linkedin_poster import make_post
+from github_commit import github_commit
 
 load_dotenv()
 deepseek = os.getenv("DEEPSEEK_KEY")
+access_token = os.getenv("LINKEDIN_ACCESS_TOKEN")
+URN = os.getenv("URN")
 
+print(f"Deepseek key: {deepseek}")
 from my_array import topics
 import sys
 from linkedin_markdown import convert_markdown_to_unicode
@@ -34,3 +39,6 @@ with open(f"{os.path.dirname(__file__)}//posts//{post_topic}.txt", "w", encoding
     file_2.write(resulting_text)
 
 
+make_post(access_token=access_token, URN=URN, article=resulting_text)
+
+github_commit()

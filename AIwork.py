@@ -18,13 +18,14 @@ def AIwork(post_topic, deepseek):
         messages=[
             {
             "role": "user",
-            "content": f"""Write a LinkedIn post on a trending topic from the realms of futurism, science, or technology. Topic {post_topic}. Your post should:
+            "content": f"""Pretend you are a writer who specializes on writing in Linkedin.Write a LinkedIn post on a trending topic from the realms of futurism, science, or technology. Topic {post_topic}. Your post should:
 
-                Tone & Style: Adopt a warm, yet professional tone with a human touch—feel free to include personal insights to make the content relatable.
+                Tone & Style: Adopt a warm, yet professional tone with a human touch—feel free to include a short story to make the content relatable.
                 Structure: Be succinct and well-organized, using clear sections or bullet points if needed.
                 Emojis: Integrate a few sparse, well-placed emojis (e.g., 😊, 🚀) to add personality without overwhelming the text.
                 Content Quality: Ensure the post is informative, accessible (minimizing excessive technical jargon), and invites thoughtful discussion.
-                Generate a high-quality, engaging post that meets these criteria.""",
+                Generate a high-quality, engaging post that meets these criteria. Consider that the post is going to
+                be directly posted.""",
             }
         ]
     )
