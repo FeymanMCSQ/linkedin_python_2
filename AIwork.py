@@ -4,9 +4,7 @@ from openai import OpenAI
 
 
 def AIwork(post_topic, deepseek): 
-    # load_dotenv()
-
-    # deepseek = os.getenv("DEEPSEEK_KEY")
+    print(f"Well the deepsek key here is: {deepseek}")
 
     client = OpenAI(
         base_url="https://openrouter.ai/api/v1",

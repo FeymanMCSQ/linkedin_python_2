@@ -10,8 +10,8 @@ from AIwork import AIwork
 
 def linkedinApp(): 
     load_dotenv()
-    deepseek = os.getenv("DEEPSEEK_KEY")
-    access_token = os.getenv("LINKEDIN_ACCESS_TOKEN")
+    deepseek = os.getenv("MY_DEEP_KEY")
+    access_token = os.getenv("ACCESS_TOKEN")
     URN = os.getenv("URN")
 
     print(f"Deepseek key: {deepseek}")
