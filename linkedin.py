@@ -45,5 +45,4 @@ def linkedinApp():
     github_commit()
 
 
-for x in range(6):
-    linkedinApp()
+linkedinApp()
