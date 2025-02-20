@@ -12,7 +12,7 @@ def AIwork(post_topic, deepseek):
     )
 
     completion = client.chat.completions.create(
-        model=  "deepseek/deepseek-r1",
+        model=  "openai/o3-mini-high",
         messages=[
             {
             "role": "user",
